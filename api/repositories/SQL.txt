@@ -1,0 +1,28 @@
+Requirement 9
+
+First answer (Return the names of all salespeople that have an order with George):
+
+
+
+
+Second answer (Return the names of all salespeople that do not have any order with George):
+
+
+
+Third answer (Return the names of salespeople that have 2 or more orders.):
+
+
+
+
+Requirement 10
+
+First answer (Return the name of the salesperson with the 3rd highest salary.):
+
+
+
+Second answer (Create a new roll-up table BigOrders(where columns are CustomerID, TotalOrderValue),
+and insert into that table customers whose total Amount across all orders is greater than 1000):
+
+
+
+Third answer (Return the total Amount of orders for each month, ordered by year, then month (both in descending order):

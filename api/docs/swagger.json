@@ -1,0 +1,193 @@
+{
+  "swagger": "2.0",
+  "info": {
+      "description": "test some functions via providers",
+      "version": "1.0.0",
+      "title": "Swagger for Some functions"
+  },
+  "tags": [
+      {
+          "name": "status",
+          "description": "Checks if API is up and running"
+      }
+  ],
+  "schemes": [
+      "http"
+  ],
+  "consumes": [
+      "application/json"
+  ],
+  "produces": [
+      "application/json"
+  ],
+  "paths": {
+      "/": {
+          "get": {
+              "tags": [
+                  "status"
+              ],
+              "description": "API status check",
+              "responses": {
+                  "200": {
+                      "description": "Service is up"
+                  }
+              }
+          }
+        },
+        "/isNullOrEmpty": {
+            "post": {
+                "tags": [
+                    "functions"
+                ],
+                "summary": "Act as IsNullOrEmpty method",
+                "description": "",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/stringValue"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/positive-divisors": {
+            "post": {
+                "tags": [
+                    "functions"
+                ],
+                "summary": "",
+                "description": "",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        }, 
+        "/triangle-area": {
+            "post": {
+                "tags": [
+                    "functions"
+                ],
+                "summary": "",
+                "description": "",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/triangle"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/most-common": {
+            "post": {
+                "tags": [
+                    "functions"
+                ],
+                "summary": "",
+                "description": "",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/array"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        }
+  },
+  "definitions": {
+    "stringValue": {
+        "type": "string",
+        "properties": {
+            "inputParam": {
+                "type": "string",
+                "example": "I am a test"
+            }
+        }
+    },
+    "number": {
+        "type": "number",
+        "properties": {
+            "number": {
+                "type": "number",
+                "example": 60,
+                "required": true
+            }
+        }
+    },
+    "triangle": {
+        "type": "object",
+        "properties": {
+            "a":{
+                "type" : "number",
+                "example": 10,
+                "required": true
+            },
+            "b": {
+                "type": "number",
+                "example": 10,
+                "required": true
+            }, 
+            "c": {
+                "type": "number",
+                "example": 10,
+                "required": true
+            }
+        }
+    },
+    "array": {
+        "type": "array",
+        "properties": {
+            "inputArray": {
+                "type": "array",
+                "example": [1, 2, 3, 5, 1],
+                "required": true
+            }
+        }
+    }
+  }
+}
